@@ -1,9 +1,10 @@
 {
+
   "type": "Page",
   "slug": "contact",
   "title": "Get in touch",
-  "intro": "Add your preferred contact information here.",
-  "body": "Add your contact details, availability and booking information here.",
+  "intro": "Please either email me or text me with enquiries.",
+  "body": "Please don’t ring me, as I’m very likely to be either in a session or somewhere where I’m unable to take your call confidentially.\n\nThe quickest way to reach me is therefore by email or text. I aim to get back to you at the earliest opportunity, and certainly within 24 hours.",
   "buttonText": "Email me",
   "buttonUrl": "mailto:"
 }
