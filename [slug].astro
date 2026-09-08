@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { readdir } from "node:fs/promises";
+
+export async function getStaticPaths() {
+  const files = await readdir(new URL("../../content/pages/", import.meta.url));
+  return files
+    .filter((f) => f.endsWith(".json") && f !== "index.json")
+    .map((f) => ({ params: { slug: f.replace(".json", "") } }));
+}
+
+const { slug } = Astro.params;
+const page = await import(`../../content/pages/${slug}.json`);
+const data = page.default;
+const objectId = `content/pages/${slug}.json`;
+---
+<BaseLayout title={data.title}>
+  <section class="page-hero">
+    <div class="page-hero-inner" data-sb-object-id={objectId}>
+      <div class="eyebrow">Therapy & Counselling</div>
+      <h1 data-sb-field-path="title">{data.title}</h1>
+      <p class="lead" style="margin-left:0" data-sb-field-path="intro">{data.intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="body-copy" data-sb-object-id={objectId}>
+      <p data-sb-field-path="body">{data.body}</p>
+      <a class="button" href={data.buttonUrl} data-sb-field-path="buttonText">{data.buttonText}</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import page from "../../content/pages/index.json";
+---
+<BaseLayout title={page.title}>
+  <section class="hero" data-sb-object-id="content/pages/index.json">
+    <div class="hero-inner">
+      <div class="eyebrow">Therapy & Counselling</div>
+      <h1 data-sb-field-path="title">{page.title}</h1>
+      <p class="lead" data-sb-field-path="intro">{page.intro}</p>
+      <a class="button" href={page.buttonUrl} data-sb-field-path="buttonText">{page.buttonText}</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="two-col" data-sb-object-id="content/pages/index.json">
+      <div>
+        <h2>Support that starts where you are</h2>
+      </div>
+      <div class="body-copy">
+        <p data-sb-field-path="body">{page.body}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <h2>How I can help</h2>
+    <div class="cards">
+      <div class="card"><h3><a href="/anxiety">Anxiety</a></h3><p>Support when anxiety is becoming difficult to manage.</p></div>
+      <div class="card"><h3><a href="/stress-burnout">Stress & Burnout</a></h3><p>Space to understand pressure, exhaustion and what you need.</p></div>
+      <div class="card"><h3><a href="/depression">Depression</a></h3><p>A place to explore low mood, disconnection and difficult feelings.</p></div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,130 @@
+---
+const { title = "Therapy & Counselling" } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content="Therapy and counselling website." />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Your Name</a>
+      <nav>
+        <a href="/about">About</a>
+        <a href="/counselling">Counselling</a>
+        <a href="/anxiety">Anxiety</a>
+        <a href="/stress-burnout">Stress & Burnout</a>
+        <a href="/depression">Depression</a>
+        <a href="/bereavement">Bereavement</a>
+        <a class="nav-button" href="/contact">Get in touch</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <div class="footer-inner">
+        <div><strong>Your Name</strong><br />Psychotherapeutic Counselling</div>
+        <div>© {new Date().getFullYear()} Your Name</div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --ink: #233b45;
+    --muted: #60747b;
+    --accent: #6fa7a8;
+    --pale: #eef5f3;
+    --cream: #fbfaf6;
+    --line: #dce7e4;
+    --max: 1180px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+  }
+  a { color: inherit; }
+  .site-header {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 26px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .brand {
+    text-decoration: none;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    letter-spacing: .02em;
+  }
+  nav { display: flex; align-items: center; gap: 21px; flex-wrap: wrap; justify-content: flex-end; }
+  nav a { text-decoration: none; font-size: 14px; }
+  .nav-button {
+    padding: 11px 18px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+  }
+  main { min-height: 70vh; }
+  .hero {
+    background: var(--pale);
+    min-height: 510px;
+    display: grid;
+    place-items: center;
+    padding: 80px 28px;
+  }
+  .hero-inner { max-width: 920px; text-align: center; }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 22px;
+  }
+  h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  h1 { font-size: clamp(46px, 7vw, 78px); margin: 0 0 24px; }
+  h2 { font-size: clamp(34px, 5vw, 52px); margin: 0 0 22px; }
+  h3 { font-size: 27px; margin: 0 0 12px; }
+  .lead { font-size: 20px; max-width: 720px; margin: 0 auto 30px; color: #41575e; }
+  .button {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--ink);
+    color: white;
+    padding: 13px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+  }
+  .section { max-width: var(--max); margin: 0 auto; padding: 90px 28px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1.2fr; gap: 70px; align-items: start; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 40px; }
+  .card { padding: 28px; background: var(--cream); border: 1px solid var(--line); }
+  .card a { text-decoration: none; }
+  .page-hero { padding: 85px 28px; background: var(--pale); }
+  .page-hero-inner { max-width: var(--max); margin: 0 auto; }
+  .body-copy { max-width: 780px; }
+  .body-copy p { font-size: 18px; }
+  footer { border-top: 1px solid var(--line); }
+  .footer-inner { max-width: var(--max); margin: 0 auto; padding: 35px 28px; display:flex; justify-content:space-between; gap:20px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 800px) {
+    .site-header { align-items: flex-start; flex-direction: column; }
+    nav { justify-content: flex-start; }
+    .two-col, .cards { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; }
+  }
+</style>
