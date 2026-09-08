@@ -1,0 +1,9 @@
+{
+  "type": "Page",
+  "slug": "",
+  "title": "Your main heading goes here",
+  "intro": "Your opening text goes here.",
+  "body": "Your main page content goes here.",
+  "buttonText": "Get in touch",
+  "buttonUrl": "/contact"
+}
