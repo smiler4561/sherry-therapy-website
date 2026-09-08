@@ -1,0 +1,9 @@
+{
+  "type": "Page",
+  "slug": "",
+  "title": "Your main heading goes here",
+  "intro": "Your opening text goes here. You will be able to edit this directly in Netlify's Visual Editor.",
+  "body": "Add the rest of your introduction here when you are ready.",
+  "buttonText": "Get in touch",
+  "buttonUrl": "/contact"
+}

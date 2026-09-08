@@ -1,0 +1,9 @@
+{
+  "type": "Page",
+  "slug": "contact",
+  "title": "Get in touch",
+  "intro": "Add your preferred contact information here.",
+  "body": "Add your contact details, availability and booking information here.",
+  "buttonText": "Email me",
+  "buttonUrl": "mailto:"
+}

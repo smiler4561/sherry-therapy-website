@@ -1,0 +1,9 @@
+{
+  "type": "Page",
+  "slug": "counselling",
+  "title": "Counselling",
+  "intro": "Describe your counselling approach.",
+  "body": "Add your counselling information here.",
+  "buttonText": "Get in touch",
+  "buttonUrl": "/contact"
+}
